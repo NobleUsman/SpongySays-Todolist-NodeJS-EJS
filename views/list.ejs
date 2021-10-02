@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/head") -%>
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1> <%= listTitle %> </h1>
+    </div>
+    
+    <div class="box">
+        <% for (let i = 0; i < todo.length; i++) { %>
+
+            <div class="item">
+                <input type="checkbox">
+                <p> <%= todo[i] %> </p>
+            </div>
+
+        <%  } %>
+
+        <form class="item" action="/" method="POST">
+            <input type="text" placeholder="New Item..." name="todoItem" autocomplete="off">
+             <button type="submit" name="list" value= <%= listTitle %> >+</button>
+        </form>
+
+    </div>
+
+    <%- include("partials/footer") -%>
+
+    <!-- <form action="/" method="POST">
+        <ul>
+            
+            <% for (let i = 0; i < todo.length; i++) { %>
+                <li> <%= todo[i] %> </li>
+            <%  } %>
+
+            <li>
+                <input type="text" placeholder="Type something..." name="todoItem">
+                <button type="submit">Add</button>
+            </li>
+        </ul>
+    </form> -->
+</body>
+</html>
